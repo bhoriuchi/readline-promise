@@ -1,0 +1,29 @@
+{
+  "name": "readline-promise",
+  "version": "0.0.1",
+  "description": "Readline using promises",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhoriuchi/readline-promise.git"
+  },
+  "keywords": [
+    "readline",
+    "promise"
+  ],
+  "author": "Branden Horiuchi <bhoriuchi@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/bhoriuchi/readline-promise",
+  "bugs": {
+    "url": "https://github.com/bhoriuchi/readline-promise/issues"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.1"
+  },
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "directories": {
+    "example": "example"
+  }
+}
