@@ -1,0 +1,16 @@
+{
+  "presets": [["env", {
+    "targets": {
+      "node": 4
+    }
+  }]],
+  "plugins": [
+    "syntax-async-functions",
+    "syntax-async-generators",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    ["transform-es2015-classes", {"loose": true}],
+    ["transform-es2015-destructuring", {"loose": true}],
+    ["transform-es2015-spread", {"loose": true}]
+  ]
+}

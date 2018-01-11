@@ -1,11 +1,14 @@
 {
   "name": "readline-promise",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Readline using promises",
-  "main": "lib/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bhoriuchi/readline-promise.git"
+  },
+  "options": {
+    "mocha": "--check-leaks --full-trace src/**/__tests__/**/*-test.js"
   },
   "keywords": [
     "readline",
@@ -17,13 +20,25 @@
   "bugs": {
     "url": "https://github.com/bhoriuchi/readline-promise/issues"
   },
-  "dependencies": {
-    "bluebird": "^3.3.1"
-  },
   "scripts": {
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "lint": "eslint src",
+    "test": "babel-node ./node_modules/.bin/_mocha $npm_package_options_mocha",
+    "build": "npm run lint && npm run test && babel src --optional runtime --ignore __tests__ --out-dir dist/ && cp package.json dist/ && cp README.md dist/"
   },
-  "directories": {
-    "example": "example"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-syntax-async-generators": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0",
+    "eslint-plugin-babel": "^4.1.2"
+  },
+  "dependencies": {
+    "async-iterator-from": "^0.1.1",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0"
   }
 }
