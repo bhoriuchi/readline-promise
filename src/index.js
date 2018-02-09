@@ -84,6 +84,16 @@ class Interface extends readline.Interface {
         return reducer();
       });
   }
+
+  /**
+   * Asks a question returns a promise
+   * @param {*} query
+   */
+  questionAsync(query) {
+    return new Promise(resolve => {
+      this.question(query, resolve);
+    });
+  }
 }
 
 /**
