@@ -66,4 +66,23 @@ describe('readline-promise tests', function () {
         rlp.close();
       });
   });
+
+  it('questionAsync terminal test', function () {
+    // this.timeout(10000);
+    const rlp = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+      terminal: true,
+    });
+
+    setTimeout(() => {
+      rlp.write('pong\r');
+    }, 100);
+
+    return rlp.questionAsync('ping: ')
+      .then(answer => {
+        expect(answer).to.equal('pong');
+        rlp.close();
+      });
+  });
 });
