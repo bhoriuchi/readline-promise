@@ -2,6 +2,8 @@
 
 A drop in replacement for readline with additional promise based methods like `map`, `reduce`, and `forEach`. Uses a custom [AsyncIterator](https://github.com/tc39/proposal-async-iteration) implementation.
 
+Note: If you were using `var readline = require('readline')`, change this to `var readline = require('readline-promise').default`.
+
 ## Example
 ```js
 import readline from 'readline-promise';
