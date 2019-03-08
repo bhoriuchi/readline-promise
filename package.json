@@ -1,6 +1,6 @@
 {
   "name": "readline-promise",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Readline using promises",
   "main": "index.js",
   "repository": {
@@ -24,11 +24,11 @@
     "lint": "eslint src",
     "test": "babel-node ./node_modules/.bin/_mocha $npm_package_options_mocha",
     "closetest": "babel-node ./example/close.js",
+    "s3test": "babel-node ./example/s3test.js",
     "build": "npm run lint && npm run test && babel src  --ignore __tests__ --out-dir dist/ && cp package.json dist/ && cp README.md dist/"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^4.1.0",
+    "aws-sdk": "^2.417.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.1.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -36,7 +36,9 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
     "eslint": "^4.14.0",
-    "eslint-plugin-babel": "^4.1.2"
+    "eslint-plugin-babel": "^4.1.2",
+    "mocha": "^4.1.0"
   }
 }

@@ -4,3 +4,4 @@ coverage
 dist
 .idea
 .vscode
+.aws-credentials.json
