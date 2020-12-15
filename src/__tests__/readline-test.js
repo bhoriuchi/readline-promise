@@ -49,6 +49,22 @@ describe('readline-promise tests', function () {
     });
   });
 
+  it('zero length test', function () {
+    const values = [ 'foo', '', 'bar', 'baz' ];
+    const filePath = path.resolve(__dirname, 'zero-file.txt');
+    const rlp = readline.createInterface({
+      terminal: false,
+      input: fs.createReadStream(filePath)
+    });
+    return rlp.map((line, index) => {
+      expect(line).to.equal(values[index]);
+      return line;
+    })
+    .then(lines => {
+      expect(lines).to.deep.equal(values);
+    });
+  });
+
   it('questionAsync test', function () {
     // this.timeout(10000);
     const rlp = readline.createInterface({
@@ -83,6 +99,37 @@ describe('readline-promise tests', function () {
       .then(answer => {
         expect(answer).to.equal('pong');
         rlp.close();
+      });
+  });
+
+  it('await questionAsync terminal test', async function () {
+    // this.timeout(10000);
+    const rlp = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+      terminal: false,
+    });
+
+    setTimeout(() => {
+      rlp.write('await pong\r');
+    }, 250);
+
+    const answer = await rlp.questionAsync('await ping: ');
+    expect(answer).to.equal('await pong');
+    rlp.close();
+  });
+
+  it('issue8 test', function () {
+    const filePath = path.resolve(__dirname, 'input.example');
+    const rlp = readline.createInterface({
+        terminal: false,
+        input: fs.createReadStream(filePath)
+      });
+      console.log('START');
+      rlp.forEach((line, index) => {
+        expect(line).to.equal('line' + String(index + 1));
+      }).then(() => {
+        console.log('DONE');
       });
   });
 });

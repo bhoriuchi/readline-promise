@@ -22,6 +22,7 @@
   },
   "scripts": {
     "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
     "test": "babel-node ./node_modules/.bin/_mocha $npm_package_options_mocha",
     "closetest": "babel-node ./example/close.js",
     "s3test": "babel-node ./example/s3test.js",
