@@ -25,10 +25,12 @@
     "lint-fix": "eslint src --fix",
     "test": "babel-node ./node_modules/.bin/_mocha $npm_package_options_mocha",
     "closetest": "babel-node ./example/close.js",
+    "dtslint": "dtslint types",
     "s3test": "babel-node ./example/s3test.js",
     "build": "npm run lint && npm run test && babel src  --ignore __tests__ --out-dir dist/ && cp package.json dist/ && cp README.md dist/"
   },
   "devDependencies": {
+    "@types/node": "14.14.31",
     "aws-sdk": "^2.417.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.1.2",
@@ -38,8 +40,11 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
+    "dtslint": "4.0.7",
     "eslint": "^4.14.0",
     "eslint-plugin-babel": "^4.1.2",
-    "mocha": "^4.1.0"
-  }
+    "mocha": "^4.1.0",
+    "typescript": "4.2.2"
+  },
+  "types": "types"
 }
