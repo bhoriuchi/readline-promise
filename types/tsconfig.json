@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "lib": ["es6"],
+        "module": "commonjs",
+        "noEmit": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "paths": {
+            "readline-promise": ["."]
+        },
+        "strictFunctionTypes": true,
+        "strictNullChecks": true
+    }
+}
