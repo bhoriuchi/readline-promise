@@ -40,7 +40,7 @@ describe('readline-promise tests', function () {
       expect(line).to.equal(String(index + 1));
       return Number(line);
     });
-    expect(lines).to.deep.equal([1, 2, 3, 4, 5]);
+    expect(lines).to.deep.equal([ 1, 2, 3, 4, 5 ]);
   });
 
   it('zero length test', async function () {
