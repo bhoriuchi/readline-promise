@@ -4,6 +4,19 @@ A drop in replacement for readline with additional promise based methods like `m
 
 Note: If you were using `var readline = require('readline')`, change this to `var readline = require('readline-promise').default`.
 
+## Typescript
+For typescript to find the corresponding types set your project's `tsconfig` to use node module resolution
+
+```json
+{
+  "compilerOptions": {
+    /* Rest of the config */
+    "moduleResolution": "node", 
+  }
+}
+```
+
+
 ## Example
 ```js
 import readline from 'readline-promise';
